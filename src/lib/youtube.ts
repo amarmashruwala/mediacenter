@@ -2,7 +2,7 @@ import { XMLParser } from 'fast-xml-parser'
 import type { Video } from './media-types'
 const channel = process.env.YOUTUBE_CHANNEL_ID ?? 'UClikcoIG3vxfTdmgKnoUgEw'
 export async function getVideos(): Promise<Video[]> {
-  const r = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`, { next: { revalidate: 900 } })
+  const r = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`, { headers: { Accept: 'application/atom+xml, application/xml, text/xml', 'User-Agent': 'Mozilla/5.0 (compatible; MediaCenter/1.0)' }, next: { revalidate: 900 } })
   if (!r.ok) throw new Error('Videos unavailable')
   const xml = await r.text(); const feed = new XMLParser({ ignoreAttributes: false }).parse(xml).feed
   const entries = Array.isArray(feed?.entry) ? feed.entry : feed?.entry ? [feed.entry] : []
