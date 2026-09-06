@@ -1,0 +1,1 @@
+export default function Offline(){return <div className="container" style={{padding:'7rem 0',textAlign:'center'}}><p className="eyebrow">MediaCenter</p><h1 style={{fontSize:'clamp(2.4rem,7vw,5rem)',margin:'1rem 0'}}>You’re offline</h1><p className="muted">The app shell is available. Reconnect to tune in, watch live, or join the community.</p></div>}

@@ -1,0 +1,1 @@
+import { config } from '@/lib/config'; export function OwncastChat(){return <div style={{height:'100%',minHeight:380,overflow:'hidden',borderRadius:18,background:'#000'}}><iframe title="Owncast live chat" src={`${config.owncastBase}/embed/chat/readwrite`} style={{width:'100%',height:'100%',minHeight:380,border:0}}/></div>}

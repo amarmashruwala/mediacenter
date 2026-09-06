@@ -1,0 +1,1 @@
+import { config } from '@/lib/config'; export function OwncastVideo(){return <div style={{aspectRatio:'16/9',overflow:'hidden',borderRadius:18,background:'#000'}}><iframe title="Unified-Live live video" src={`${config.owncastBase}/embed/video`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{width:'100%',height:'100%',border:0}}/></div>}
